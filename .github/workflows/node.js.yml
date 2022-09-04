@@ -23,3 +23,8 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROOKU_TOKEN}}
+          heroku_app_name: ${{secrets.HEROOKU_APP}}
+          heroku_email: ${{secrets.HEROOKU_EMAIL}}
